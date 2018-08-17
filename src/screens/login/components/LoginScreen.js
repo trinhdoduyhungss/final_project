@@ -32,7 +32,7 @@ export default class LoginScreen extends Component {
     // var verifyformat = user.findIndex("@gmail.com"||"@gmail.com.vn") > -1
     //console.log(databaseacc)
     console.log(user +' '+pass)
-    verifyuser=firebase.database().ref("trump")
+    verifyuser=firebase.database().ref(user)
     verifyuser.on('value', snapshot =>{
         console.log(snapshot.val())
         if(pass == snapshot.val() && pass != '' && snapshot.val() != ''){
