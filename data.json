@@ -1,0 +1,23 @@
+{
+    "products":[{
+            "id":0,
+            "name":"T shirt 1",
+            "type":"CLOTHES"
+        },{
+            "id":1,
+            "name":"T shirt 2",
+            "type":"CLOTHES"
+        },{
+            "id":2,
+            "name":"T shirt 3",
+            "type":"CLOTHES"
+        },{
+            "id":3,
+            "name":"T shirt 4",
+            "type":"CLOTHES"
+        },{
+            "id":4,
+            "name":"T shirt 5",
+            "type":"CLOTHES"
+        }]
+}
