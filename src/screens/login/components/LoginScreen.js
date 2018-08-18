@@ -21,7 +21,6 @@ const config = {
 };
 firebase.initializeApp(config);
 var verifyuser
-var verifyacc 
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);

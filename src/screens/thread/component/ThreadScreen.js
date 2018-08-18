@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image, StyleSheet} from 'react-native';
+import { View, Text, Image, StyleSheet} from 'react-native';
 import iconthread from '@assets/images/group.png';
 import gifload from '@assets/images/30.gif';
 export class ThreadScreen extends Component {
@@ -13,7 +13,6 @@ export class ThreadScreen extends Component {
             console.log(counter);
             counter--;
             if (counter < 0 ) {
-                // code here will run when the counter reaches zero.
                 clearInterval(interval);
                 this.props.navigation.navigate('LoginScreen')
                 console.log('Ding!');
