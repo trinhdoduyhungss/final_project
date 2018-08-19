@@ -1,23 +1,92 @@
 {
-    "products":[{
-            "id":0,
-            "name":"T shirt 1",
-            "type":"CLOTHES"
-        },{
-            "id":1,
-            "name":"T shirt 2",
-            "type":"CLOTHES"
-        },{
-            "id":2,
-            "name":"T shirt 3",
-            "type":"CLOTHES"
-        },{
-            "id":3,
-            "name":"T shirt 4",
-            "type":"CLOTHES"
-        },{
-            "id":4,
-            "name":"T shirt 5",
-            "type":"CLOTHES"
-        }]
+    "user": {
+        "id": 1,
+        "name": "Trump",
+        "email": "user@gmail.com",
+        "password": "1234567",
+        "job": "developer",
+        "company": "FPT",
+        "gender": "male",
+        "address": "Scotland",
+        "profile_image": "https://baohoahaudoanhnhan.vn/wp-content/uploads/2017/11/toc-dep-2017-bao-hoa-hau-doanh-nhan-1.jpeg",
+        "cover_image": "https://2014photoshopsig.files.wordpress.com/2016/09/image-6-background-with-bokeh-lights.jpg?w=900"
+    },
+
+    "friends": [{
+        "id": 2,
+        "name": "Hillary",
+        "email": "hillary@gmail.com",
+        "job": "developer",
+        "company": "Axon Active",
+        "gender": "male",
+        "address": "Sweetland",
+        "status": "ACTIVE",
+        "friend_date": "Feburary 28th 2018",
+        "description": "Nothing",
+        "profile_image": "https://baohoahaudoanhnhan.vn/wp-content/uploads/2017/11/toc-dep-2017-bao-hoa-hau-doanh-nhan-1.jpeg",
+        "cover_image": "https://png.pngtree.com/thumb_back/fh260/back_pic/03/70/72/5257b6c12d89875.jpg"
+    }, {
+        "id": 3,
+        "name": "Puttin",
+        "email": "puttin@gmail.com",
+        "job": "developer",
+        "company": "Axon Active",
+        "gender": "male",
+        "address": "Gree",
+        "status": "ACTIVE",
+        "friend_date": "March 18th 2018",
+        "description": "Nothing",
+        "profile_image": "https://baohoahaudoanhnhan.vn/wp-content/uploads/2017/11/toc-dep-2017-bao-hoa-hau-doanh-nhan-1.jpeg",
+        "cover_image": "https://us.123rf.com/450wm/jaboy/jaboy1511/jaboy151100411/48433203-valentine-heart-cute-background.jpg?ver=6"
+    }, {
+        "id": 4,
+        "name": "Marry",
+        "email": "marry@gmail.com",
+        "job": "science",
+        "company": "Home",
+        "gender": "Female",
+        "address": "UK",
+        "status": "PENDING",
+        "sent_date": "August 21st 2018",
+        "description": "Nothing",
+        "profile_image": "https://baohoahaudoanhnhan.vn/wp-content/uploads/2017/11/toc-dep-2017-bao-hoa-hau-doanh-nhan-1.jpeg",
+        "cover_image": "https://2014photoshopsig.files.wordpress.com/2016/09/image-6-background-with-bokeh-lights.jpg?w=900"
+    }, {
+        "id": 5,
+        "name": "Harry Smith",
+        "email": "harrySmith@gmail.com",
+        "job": "science",
+        "company": "Gameloft",
+        "gender": "Female",
+        "address": "France",
+        "status": "INACTIVE",
+        "sent_date": "June 17th 2018",
+        "description": "Nothing",
+        "profile_image": "https://baohoahaudoanhnhan.vn/wp-content/uploads/2017/11/toc-dep-2017-bao-hoa-hau-doanh-nhan-1.jpeg",
+        "cover_image": "https://us.123rf.com/450wm/jaboy/jaboy1601/jaboy160100061/50368173-valentine-heart-light-background.jpg?ver=6"
+    }],
+
+    "photos": [{
+        "id": 123,
+        "photo_url": "https://i.ytimg.com/vi/RsZseLKXXUc/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCpC2cw0AxSapLKx__eyygFQO5ALQ",
+        "user_id": 5
+    }, {
+        "id": 111,
+        "photo_url": "https://i.ytimg.com/vi/NB6Vqb0PkPM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCjJ8nsSdDgV75H3iKeRg7H1aVpqQ",
+        "user_id": 5
+    }, {
+        "id": 13,
+        "photo_url": "https://i.ytimg.com/vi/f_LgWgzCPnQ/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA8_Ux_-SeI80P4ttOLnUx9CeBOjQ",
+        "user_id": 2
+    }, {
+        "id": 114,
+        "photo_url": "https://i.ytimg.com/vi/DzyveeVKwEs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDLFmXzBftbczhXrO6wwQXiVK02YQ",
+        "user_id": 4
+    }],
+
+    "notifications": [{
+        "id": 1231232,
+        "content": "Accepted Hillary",
+        "date_time": "Feburary 28th 2018 04:30pm",
+    }]
 }
