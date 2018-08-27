@@ -6,15 +6,16 @@ import {
   TextInput,
   Alert
 } from 'react-native';
-
+export var usersss;
+export var avatarus;
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { user: '', pass: '' };
     this.Signin = this.Signin.bind(this);
   }
-  Signin(user, pass) {  
-    fetch('http://192.168.88.104:3000/api/login', {
+  Signin(user, pass) {
+    fetch('http://192.168.88.105:3000/api/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -27,7 +28,9 @@ export default class LoginScreen extends Component {
     }).then((response) => response.json())
       .then((responseJson) => {
         if (responseJson.message === "success") {
-          this.props.navigation.navigate('HomeScreen')
+          usersss = responseJson.user_name;
+          avatarus = responseJson.avatar_u;
+          this.props.navigation.navigate('BottomTab');
         } else {
           Alert.alert(
             'Dang nhap khong thanh cong',
