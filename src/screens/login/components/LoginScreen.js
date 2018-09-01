@@ -6,8 +6,10 @@ import {
   TextInput,
   Alert
 } from 'react-native';
+//import api from '@apiConfig/api'
 export var usersss;
 export var avatarus;
+export var t_friend;
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
@@ -30,6 +32,7 @@ export default class LoginScreen extends Component {
         if (responseJson.message === "success") {
           usersss = responseJson.user_name;
           avatarus = responseJson.avatar_u;
+          t_friend = responseJson.totalFriend;
           this.props.navigation.navigate('BottomTab');
         } else {
           Alert.alert(

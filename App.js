@@ -3,6 +3,7 @@ import { Image, SafeAreaView, View, ScrollView, Text, StatusBar } from 'react-na
 import { createDrawerNavigator, createBottomTabNavigator, createStackNavigator, DrawerItems } from 'react-navigation';
 import { reduxifyNavigator, createReactNavigationReduxMiddleware, createNavigationReducer } from 'react-navigation-redux-helpers';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
+import createSagaMiddleware from 'redux-saga'
 import ThreadScreen from '@thread/component/ThreadScreen';
 import HomeScreen from '@home/components/HomeScreen';
 import LoginScreen from '@login/components/LoginScreen';
@@ -12,6 +13,9 @@ import getSlideFromRightTransition from 'react-navigation-slide-from-right-trans
 import iconsetting from "@assets/images/settings.png"
 import { usersss } from "@login/components/LoginScreen";
 import { avatarus } from "@login/components/LoginScreen";
+import { t_friend } from "@login/components/LoginScreen";
+import  data from "@reducers/datass";
+import mysaga from "@saga/Fetchfriend";
 const BottomTabNav = createBottomTabNavigator({
   Home: {
     screen: HomeScreen,
@@ -37,9 +41,12 @@ const BottomTabNav = createBottomTabNavigator({
   })
 const CustomDrawerComponent = (props) => (
   <SafeAreaView style={{ flex: 1 }}>
-    <View style={{ height: 100, backgroundColor: 'white', flexDirection: 'row' }}>
-      <Image source={{ uri: avatarus }} style={{ height: 50, width: 50, borderRadius: 50, margin: 10, marginTop: StatusBar.currentHeight }} />
-      <Text style={{ margin: 10, fontSize: 16, fontWeight: 'bold', marginTop: StatusBar.currentHeight }} >{usersss}</Text>
+    <View style={{ height: 100, backgroundColor: 'white', flexDirection: 'row', borderBottomColor: '#EBEBEB' }}>
+      <Image source={{ uri: avatarus }} style={{ height: 50, width: 50, borderRadius: 50, margin: 19, marginTop: StatusBar.currentHeight }} />
+      <View style={{flexDirection: 'column', backgroundColor: 'white'}}> 
+        <Text style={{ margin: 10, fontSize: 16, fontWeight: 'bold', marginTop: StatusBar.currentHeight}} >{usersss}</Text>
+        <Text>{t_friend}</Text>
+      </View>
     </View>
     <ScrollView>
       <DrawerItems {...props} />
@@ -76,11 +83,13 @@ const AppNavigator = createStackNavigator({
 const navReducer = createNavigationReducer(AppNavigator)
 const appReducer = combineReducers({
   nav: navReducer,
+  data
 })
 const middleware = createReactNavigationReduxMiddleware(
   "root",
   state => state.nav,
 );
+const sagaMiddleware = createSagaMiddleware();
 const MainApp = reduxifyNavigator(AppNavigator, "root");
 const mapStateToProps = (state) => ({
   state: state.nav,
@@ -88,8 +97,9 @@ const mapStateToProps = (state) => ({
 const AppWithNavigationState = connect(mapStateToProps)(MainApp);
 const store = createStore(
   appReducer,
-  applyMiddleware(middleware),
+  applyMiddleware(middleware, sagaMiddleware),
 );
+sagaMiddleware.run(mysaga)
 export default class App extends Component {
   render() {
     return (
