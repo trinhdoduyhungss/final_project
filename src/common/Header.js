@@ -4,8 +4,6 @@ import hamburgerBtn from '@assets/images/hamburger.png';
 import SearchInput from '@common/SearchInput'
 const Header = (props) => {
     return (
-        // <View style={{ flexDirection: 'column' }}>
-        // </View>
             <View style={styles.wrapHeader} >
                 <View style={{flexDirection: 'row', alignItems: 'center',   justifyContent: 'space-between'}}>
                 <TouchableOpacity onPress={() => props.navigation.openDrawer()}>

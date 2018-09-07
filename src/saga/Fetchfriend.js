@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 
 import { REQUESTFriend_API_DATA, receiveFirendApiData } from "@action/actions";
-import { fetchData } from "@apiConfig/apiFecthFriends";
+import { fetchData } from "@apiConfig/apis";
 function* getApiData(action) {
   try {
     // do api call

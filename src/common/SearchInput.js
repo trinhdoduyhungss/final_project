@@ -6,7 +6,7 @@ const SearchInput = (props) => (
     <SearchBar
       icon={{ type: 'font-awesome', name: 'search' }}
       placeholder=''
-      inputStyle={{width:515, height: StatusBar.currentHeight + 16, backgroundColor:'#fff', paddingLeft:3, paddingRight:3, borderRadius:5 }}
+      inputStyle={{width:515, height: StatusBar.currentHeight + 16, backgroundColor:'#fff', paddingLeft:28, paddingRight:3, borderRadius:5 }}
       containerStyle={{backgroundColor: 'transparent', borderBottomColor:'#202E3E', borderTopColor:'#202E3E'}}
     />
   </View>
