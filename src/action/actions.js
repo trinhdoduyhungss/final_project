@@ -1,5 +1,14 @@
 export const REQUESTFriend_API_DATA = "REQUESTFriend_API_DATA";
 export const RECEIVEFriend_API_DATA = "RECEIVEFriend_API_DATA";
-
+export const REQUESTFriendPending_API_DATA = "REQUESTFriendPending_API_DATA";
+export const RECEIVEFriendPending_API_DATA = "RECEIVEFriendPending_API_DATA";
+export const REQUESTFriendReject_API_DATA = "REQUESTFriendReject_API_DATA";
+export const RECEIVEFriendReject_API_DATA = "RECEIVEFriendReject_API_DATA";
+export const REQUESTDeleteFriendPending_API_DATA = "REQUESTDeleteFriendPending_API_DATA";
+export const RECEIVEDeleteFriendPending_API_DATA = "RECEIVEDeleteFriendPending_API_DATA";
 export const requestFriendApiData = () => ({ type: REQUESTFriend_API_DATA });
 export const receiveFirendApiData = data => ({ type: RECEIVEFriend_API_DATA, data });
+export const requestFriendPendingApiData = () => ({ type: REQUESTFriendPending_API_DATA });
+export const receiveFirendPendingApiData = data => ({ type: RECEIVEFriendPending_API_DATA, data });
+export const requestFriendRejectApiData = () => ({ type: REQUESTFriendReject_API_DATA });
+export const receiveFirendRejectApiData = data => ({ type: RECEIVEFriendReject_API_DATA, data });

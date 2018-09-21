@@ -7,6 +7,8 @@ import createSagaMiddleware from 'redux-saga'
 import ThreadScreen from '@thread/component/ThreadScreen';
 import HomeScreen from '@home/components/HomeScreen';
 import LoginScreen from '@login/components/LoginScreen';
+import ActivityScreen from '@Activity/component/ActivityScreen';
+import QrScanScreen from '@QrScan/components/QrScanScreen';
 import ProfileScreen from '@profile/components/ProfileScreen';
 import HelpScreen from '@helpp/components/HelpScreen';
 import { Provider, connect } from 'react-redux';
@@ -18,6 +20,7 @@ import { avatarus } from "@login/components/LoginScreen";
 import { t_friend } from "@login/components/LoginScreen";
 import  data from "@reducers/datass";
 import mysaga from "@saga/Fetchfriend";
+console.disableYellowBox = true;
 const BottomTabNav = createBottomTabNavigator({
   Home: {
     screen: HomeScreen,
@@ -30,8 +33,28 @@ const BottomTabNav = createBottomTabNavigator({
       )
     }
   },
-  Profile: { screen: ProfileScreen },
-  Help: {screen: HelpScreen}
+  QrScan: {
+    screen: QrScanScreen,
+    navigationOptions: {
+      tabBarLabel: "QrScanScreen",
+      tabBarIcon: ({ focused }) => (
+        focused
+          ? <Image source={require('@assets/images/item3.png')} />
+          : <Image source={require('@assets/images/item3.png')} />
+      )
+    }
+  },
+  Activity: {
+    screen: ActivityScreen,
+    navigationOptions: {
+      tabBarLabel: "ActivityScreen",
+      tabBarIcon: ({ focused }) => (
+        focused
+          ? <Image source={require('@assets/images/item4.png')} />
+          : <Image source={require('@assets/images/item4.png')} />
+      )
+    }
+  }, 
 }, {
     tabBarOptions: {
       showLabel: false,
@@ -69,7 +92,7 @@ const DrawerNav = createDrawerNavigator({
     screen: ProfileScreen,
     navigationOptions: {
       drawerIcon: (
-        <Image source={iconsetting} style={{ height: 24, width: 24 }} />
+        <Image source={iconsetting} style={{ height: 24, width: 24, margin: 4 }} />
       )
     }
   },
@@ -77,7 +100,7 @@ const DrawerNav = createDrawerNavigator({
     screen: HelpScreen,
     navigationOptions: {
       drawerIcon: (
-        <Image source={iconhelp} style={{height: 24, width: 24}} />
+        <Image source={iconhelp} style={{height: 24, width: 24, margin: 4}} />
       )
     }
   }

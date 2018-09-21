@@ -15,6 +15,8 @@ export var usersss;
 export var avatarus;
 export var t_friend;
 export var namess;
+export var keyofuser;
+var canclefetchlogin = false;
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,9 @@ export default class LoginScreen extends Component {
     this.Signin = this.Signin.bind(this);
   }
   Signin(email, pass) {
-    fetch('http://192.168.88.105:3000/api/login', {
+    console.log("test_cancle_inlogin "+canclefetchlogin)
+    if(canclefetchlogin == false){
+      fetch('http://192.168.88.105:3000/api/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -39,6 +43,9 @@ export default class LoginScreen extends Component {
           avatarus = responseJson.avatar_u;
           t_friend = responseJson.totalFriend;
           namess = responseJson.name
+          keyofuser = responseJson.user_key
+          canclefetchlogin =true
+          console.log(keyofuser)
           this.props.navigation.navigate('BottomTab');
         } else {
           Alert.alert(
@@ -53,6 +60,7 @@ export default class LoginScreen extends Component {
       .catch((error) => {
         console.error(error);
       });
+    }
   }
   render() {
     return (
@@ -86,7 +94,7 @@ export default class LoginScreen extends Component {
           </View>
           <Text />
           <TouchableWithoutFeedback onPress={() => this.Signin(this.state.email, this.state.pass)}>
-            <View style={{ backgroundColor: '#374E69', borderRadius: 25, marginLeft: 162, marginRight: 162 }}>
+            <View style={{ backgroundColor: '#374E69', borderRadius: 25, marginLeft: 162, marginRight: 162, marginTop:71 }}>
               <Text style={{ textAlign: 'center', color: '#fff', fontSize: 15, marginTop: 11, marginBottom: 11, marginLeft: 24, marginRight: 24 }}>LOGIN</Text>
             </View>
           </TouchableWithoutFeedback>
